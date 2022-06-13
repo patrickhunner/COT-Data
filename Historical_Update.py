@@ -21,7 +21,7 @@ from openpyxl import Workbook
 from openpyxl.utils import get_column_letter
 from openpyxl import load_workbook
 
-class COT_Data():
+class COT_Historical():
     def __init__(self, read):
         self.read = read
         look_at = pd.read_excel(read)
@@ -188,12 +188,12 @@ class COT_Data():
             df = pd.read_excel(files, engine = "openpyxl")
             df = df.drop(df.index[0])
 
-analysis = COT_Data("Financials_Look_At.xlsx")
+analysis = COT_Historical("Financials_Look_At.xlsx")
 analysis.add_historical()
 analysis.min_max_index()
 analysis.to_xlsx()
 
-analysis = COT_Data("Commodities_Look_At.xlsx")
+analysis = COT_Historical("Commodities_Look_At.xlsx")
 analysis.add_historical()
 analysis.min_max_index()
 analysis.to_xlsx()
