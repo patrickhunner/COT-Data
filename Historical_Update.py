@@ -9,7 +9,6 @@ from wsgiref import headers
 from xmlrpc.client import Boolean
 import requests
 import pandas as pd
-import numpy as np
 from datetime import datetime
 import openpyxl
 from zipfile import ZipFile
