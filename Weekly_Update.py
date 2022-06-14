@@ -50,16 +50,27 @@ class COT_Update():
         data = pd.read_csv(BytesIO(data))
         columns = [0, 3, 5, 6, 7, 13, 14, 15, 16, 78, 79, 80, 81, 86, 87, 89, 93, 94, 95, 96, 97, 100, 126, 128]
         data = data.iloc[:,columns]
+        row = data.iloc[0]
+        other = pd.read_csv("thing.csv")
+        other = other.iloc[0]
+        print(other)
+        return
+        for thing in row:
+            print(thing)
+        return
         for i in range(0,len(data)):
             row = data.iloc[i]
             if row[2] in self.code:
-                self.add_row
-        self.new_data(self, data)
+                self.new_data(i,row)
+                return
+        self.new_data(i, data)
 
     def new_data(self, num, row):     # adds new row to the top of the spreadsheet
         # cur_df = self.xlsx_df[self.code.index(num)]
         # cur_df.loc[len(cur_df)] = row
-        wb = xlsxwriter.Workbook(self.file)
+        # wb = xlsxwriter.Workbook(self.file)
+        print(row)
+        return
 
     def remove_row(self):
         for files in self.csv_names:
