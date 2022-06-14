@@ -31,13 +31,6 @@ data = urlopen(request_site).read()
 data = pd.read_csv(BytesIO(data))
 row = data.iloc[0]
 other = pd.read_csv("thing.csv")
-other = other.iloc[0]
 beg = 0
-list = []
-for i in range(0,len(row)):
-    print(i)
-    print(row[i])
-
-
-
-columns = [0,2,3,7,]
+result = data.to_html()
+print(result)

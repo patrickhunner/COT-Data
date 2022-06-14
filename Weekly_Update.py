@@ -38,32 +38,23 @@ class COT_Update():
             self.file = "Commodities.xlsx"
             self.writer = pd.ExcelWriter(self.file)
             self.num_hist = 8
+            self.url = "https://www.cftc.gov/dea/newcot/deafut.txt"
         else:
             self.file = "Financials.xlsx"
             self.writer = pd.ExcelWriter(self.file)
             self.num_hist = 7
+            self.url = "https://www.cftc.gov/dea/newcot/FinFutWk.txt"
 
     def scrape_new(self):
-        url = "https://www.cftc.gov/dea/newcot/deafut.txt"
-        request_site = Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        request_site = Request(self.url, headers={"User-Agent": "Mozilla/5.0"})
         data = urlopen(request_site).read()
-        data = pd.read_csv(BytesIO(data))
-        columns = [0, 3, 5, 6, 7, 13, 14, 15, 16, 78, 79, 80, 81, 86, 87, 89, 93, 94, 95, 96, 97, 100, 126, 128]
+        data = pd.read_csv(BytesIO(data), header = None)
+        columns = [0, 2, 3, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
         data = data.iloc[:,columns]
-        row = data.iloc[0]
-        other = pd.read_csv("thing.csv")
-        other = other.iloc[0]
-        print(other)
-        return
-        for thing in row:
-            print(thing)
-        return
         for i in range(0,len(data)):
             row = data.iloc[i]
-            if row[2] in self.code:
+            if str(row[3]) in self.code:
                 self.new_data(i,row)
-                return
-        self.new_data(i, data)
 
     def new_data(self, num, row):     # adds new row to the top of the spreadsheet
         # cur_df = self.xlsx_df[self.code.index(num)]

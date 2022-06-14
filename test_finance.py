@@ -25,21 +25,6 @@ from openpyxl import Workbook
 from openpyxl.utils import get_column_letter
 from openpyxl import load_workbook
 
-url = "https://www.cftc.gov/dea/newcot/FinFutWk.txt"
-request_site = Request(url, headers={"User-Agent": "Mozilla/5.0"})
-data = urlopen(request_site).read()
-data = pd.read_csv(BytesIO(data), header=None)
-row = data.iloc[5]
+thing = pd.ExcelFile("Financials.xlsx", engine = "openpyxl")
 
-
-# other = pd.read_csv("thing2.csv")
-# other = other.iloc[0]
-# beg = 0
-# list = []
-# for i in range(0,len(row)):
-#     print(i)
-#     print(row[i])
-
-
-
-# columns = [0,2,3,7,]
+print(pd.read_excel(thing,'Australian Dollar'))
