@@ -4,12 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-  return render_template('index.html')
-
-@app.route('/about')
-def about():
-    return render_template("about.html")
+    return render_template('index.html', template_folder='templates')
 
 if __name__ == '__main__':
-  from waitress import serve
-  serve(app, host="0.0.0.0", port=8080)
+    app.run(debug=True, host='0.0.0.0')
