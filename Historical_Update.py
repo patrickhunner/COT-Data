@@ -188,12 +188,12 @@ class COT_Historical():
             df = pd.read_excel(files, engine = "openpyxl")
             df = df.drop(df.index[0])
 
-# analysis = COT_Historical("Financials_Look_At.xlsx")
+# analysis = COT_Historical("Look_At\Financials_Look_At.xlsx")
 # analysis.add_historical()
 # analysis.min_max_index()
 # analysis.to_xlsx()
 
-analysis = COT_Historical("Commodities_Look_At.xlsx")
+analysis = COT_Historical("Look_At\Commodities_Look_At.xlsx")
 analysis.add_historical()
 analysis.min_max_index()
 analysis.to_xlsx()

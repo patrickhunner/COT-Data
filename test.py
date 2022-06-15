@@ -1,36 +1,13 @@
-from io import BytesIO
-from urllib.request import urlopen
 import pandas as pd
-from requests import Request
-from calendar import c
-from csv import writer
-from email import header
-from json import load
-from typing import final
-from urllib.request import Request, urlopen
-import urllib.request
-from wsgiref import headers
-from xmlrpc.client import Boolean
-import requests
-import pandas as pd
-from datetime import datetime
-import openpyxl
-from zipfile import ZipFile
-import os
-from io import BytesIO
-import pandas_datareader as pdr
-import datetime as dt
-import xlsxwriter
-from openpyxl import Workbook
-from openpyxl.utils import get_column_letter
-from openpyxl import load_workbook
+import matplotlib.pyplot as plt
+from itables import init_notebook_mode, show
 
-url = "https://www.cftc.gov/dea/newcot/deafut.txt"
-request_site = Request(url, headers={"User-Agent": "Mozilla/5.0"})
-data = urlopen(request_site).read()
-data = pd.read_csv(BytesIO(data))
-row = data.iloc[0]
-other = pd.read_csv("thing.csv")
-beg = 0
-result = data.to_html()
-print(result)
+df = pd.read_csv('Historicals\\2022.csv')
+df = df.iloc[0:20,0:10]
+init_notebook_mode(all_interactive=False)
+df
+# fp = open("templates\\index.html","w")
+# fp.write(df)
+# fp.close()
+# df.plot(kind="scatter",x="Report_Date_as_MM_DD_YYYY",y="Tot_Rept_Positions_Long_All")
+# plt.show()
