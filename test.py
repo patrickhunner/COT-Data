@@ -1,11 +1,34 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from itables import init_notebook_mode, show
+import webbrowser
 
 df = pd.read_csv('Historicals\\2022.csv')
-df = df.iloc[0:20,0:10]
-init_notebook_mode(all_interactive=False)
-df
+df = df.iloc[0:1000,0:10]
+table_html = df.to_html(table_id="table")
+html = f"""
+    <html>
+    <header>
+        <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+    </header>
+    <body>
+    {table_html}
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready( function () {{
+            $('#table').DataTable({{
+                
+
+                
+            }});
+        }});
+    </script>
+    </body>
+    </html>
+    """
+open("index.html","w").write(html)
+webbrowser.open("index.html")
 # fp = open("templates\\index.html","w")
 # fp.write(df)
 # fp.close()
