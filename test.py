@@ -3,8 +3,10 @@ import matplotlib.pyplot as plt
 from itables import init_notebook_mode, show
 import webbrowser
 
-df = pd.read_csv('Historicals\\2022.csv')
-df = df.iloc[0:1000,0:10]
+# df = pd.read_csv('Historicals\\2022.csv')
+# df = df.iloc[0:1000,0:3]
+xls = pd.ExcelFile('Financials.xlsx')
+df = pd.read_excel(xls, 'Australian Dollar')
 table_html = df.to_html(table_id="table")
 html = f"""
     <html>
@@ -18,9 +20,7 @@ html = f"""
     <script>
         $(document).ready( function () {{
             $('#table').DataTable({{
-                
-
-                
+                "lengthMenu": [ [15, 50, 100, -1], [15, 50, 100, "All"] ],
             }});
         }});
     </script>
