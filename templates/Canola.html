@@ -1,0 +1,119 @@
+<b>Commodities</b>
+  <p>
+      <a href="">Home</a> | 
+      <a href="financials">Financials</a> |
+      <a href="commodities">Commodities</a> |
+      <a href="scanner">Scanner</a> |
+  </p>
+
+  <html>
+    <body>
+        <form method = "post" action = "/commodities">
+          <p><input type = "submit" name = "submit_button" value = "Aluminum" />
+          <input type = "submit" name = "submit_button" value = "Butter" />
+          <input type = "submit" name = "submit_button" value = "Canola" />
+          <input type = "submit" name = "submit_button" value = "Cheese" />
+          <input type = "submit" name = "submit_button" value = "Coal" />
+          <input type = "submit" name = "submit_button" value = "Cocoa" />
+          <input type = "submit" name = "submit_button" value = "Coffee" />
+          <input type = "submit" name = "submit_button" value = "Copper" />
+          <input type = "submit" name = "submit_button" value = "Corn" />
+          <input type = "submit" name = "submit_button" value = "Cotton" />
+          <input type = "submit" name = "submit_button" value = "Crude Oil" />
+          <input type = "submit" name = "submit_button" value = "Ethane" />
+          <input type = "submit" name = "submit_button" value = "Ethanol" />
+          <input type = "submit" name = "submit_button" value = "Orange Juice" />
+          <input type = "submit" name = "submit_button" value = "Gasoline" />
+          <input type = "submit" name = "submit_button" value = "Gold" />
+          <input type = "submit" name = "submit_button" value = "Henry Hub" />
+          <input type = "submit" name = "submit_button" value = "Henry Hub Index" />
+          <input type = "submit" name = "submit_button" value = "Lean Hogs" />
+          <input type = "submit" name = "submit_button" value = "Live Cattle" />
+          <input type = "submit" name = "submit_button" value = "Natural Gas" />
+          <input type = "submit" name = "submit_button" value = "Palladium" />
+          <input type = "submit" name = "submit_button" value = "Platinum" />
+          <input type = "submit" name = "submit_button" value = "Propane" />
+          <input type = "submit" name = "submit_button" value = "Rough Rice" />
+          <input type = "submit" name = "submit_button" value = "Silver" />
+          <input type = "submit" name = "submit_button" value = "Soybean Meal" />
+          <input type = "submit" name = "submit_button" value = "Soybean Oil" />
+          <input type = "submit" name = "submit_button" value = "Soybeans" />
+          <input type = "submit" name = "submit_button" value = "Steel" />
+          <input type = "submit" name = "submit_button" value = "Sugar" />
+          <input type = "submit" name = "submit_button" value = "Wheat-HRW" />
+          <input type = "submit" name = "submit_button" value = "Wheat" />
+          <input type = "submit" name = "submit_button" value = "WTI Crude Oil" />
+          <input type = "submit" name = "submit_button" value = "WTI" />
+          <input type = "submit" name = "submit_button" value = "WTI" />
+          <input type = "submit" name = "submit_button" value = "WTI" />
+          <input type = "submit" name = "submit_button" value = "WTI" />
+          <input type = "submit" value = "WTI" /></p>
+        </form>   
+    </body>
+  </html>
+  
+      <html>
+      <header>
+          <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+      </header>
+      <body>
+      <table border="1" class="dataframe" id="table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Market_and_Exchange_Names</th>
+      <th>Report_Date_as_MM_DD_YYYY</th>
+      <th>CFTC_Contract_Market_Code</th>
+      <th>Open_Interest_All</th>
+      <th>Prod_Merc_Positions_Long_ALL</th>
+      <th>Prod_Merc_Positions_Short_ALL</th>
+      <th>Swap_Positions_Long_All</th>
+      <th>Swap__Positions_Short_All</th>
+      <th>Swap__Positions_Spread_All</th>
+      <th>M_Money_Positions_Long_ALL</th>
+      <th>M_Money_Positions_Short_ALL</th>
+      <th>M_Money_Positions_Spread_ALL</th>
+      <th>Other_Rept_Positions_Long_ALL</th>
+      <th>Other_Rept_Positions_Short_ALL</th>
+      <th>Other_Rept_Positions_Spread_ALL</th>
+      <th>Tot_Rept_Positions_Long_All</th>
+      <th>Tot_Rept_Positions_Short_All</th>
+      <th>NonRept_Positions_Long_All</th>
+      <th>NonRept_Positions_Short_All</th>
+      <th>Comm_Net</th>
+      <th>Comm_Max</th>
+      <th>Comm_Min</th>
+      <th>Comm_Index</th>
+      <th>M_Money_Net</th>
+      <th>M_Money_Max</th>
+      <th>M_Money_Min</th>
+      <th>M_Money_Index</th>
+      <th>Swap_Net</th>
+      <th>Swap_Max</th>
+      <th>Swap_Min</th>
+      <th>Swap_Index</th>
+      <th>Other_Net</th>
+      <th>Other_Max</th>
+      <th>Other_Min</th>
+      <th>Other_Index</th>
+      <th>Price</th>
+      <th>Price_Min</th>
+      <th>Price_Max</th>
+      <th>Price_Index</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+      <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+      <script>
+          $(document).ready( function () {
+              $('#table').DataTable({
+                  "lengthMenu": [ [15, 50, 100, -1], [15, 50, 100, "All"] ],
+              });
+          });
+      </script>
+      </body>
+      </html>
+      

@@ -179,27 +179,27 @@ commodities()
 financials()
 
 
-@app.route('/')
-def home():
-    return render_template('home.html', template_folder='templates')
+# @app.route('/')
+# def home():
+#     return render_template('home.html', template_folder='templates')
   
-@app.route('/financials',methods = ['POST','GET'])
-def financials():
-  if request.method == 'POST':
-    return render_template(request.form.get("submit_button") + ".html", template_folder="templates")
-  else:
-    return render_template("financials.html", template_folder='templates')
+# @app.route('/financials',methods = ['POST','GET'])
+# def financials():
+#   if request.method == 'POST':
+#     return render_template(request.form.get("submit_button") + ".html", template_folder="templates")
+#   else:
+#     return render_template("financials.html", template_folder='templates')
 
-@app.route('/commodities')
-def commodities():
-  if request.method == 'POST':
-    return render_template(request.form.get("submit_button") + ".html", template_folder="templates")
-  else:
-    return render_template("commodities.html", template_folder='templates')
+# @app.route('/commodities')
+# def commodities():
+#   if request.method == 'POST':
+#     return render_template(request.form.get("submit_button") + ".html", template_folder="templates")
+#   else:
+#     return render_template("commodities.html", template_folder='templates')
 
-@app.route('/scanner')
-def scanner():
-  return render_template("scanner.html", template_folder='templates')
+# @app.route('/scanner')
+# def scanner():
+#   return render_template("scanner.html", template_folder='templates')
 
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+# if __name__ == '__main__':
+#     app.run(debug=True, host='0.0.0.0')

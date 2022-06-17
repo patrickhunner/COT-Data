@@ -35,7 +35,7 @@ class COT_Historical():
         self.df_analysis_columns = look_at["Analysis"].to_list()
         self.df_analysis_columns = [x for x in self.df_analysis_columns if pd.isnull(x) == False]
         if read == "Look_At\Commodities_Look_At.xlsx":
-            self.file = "Look_At\Commodities.xlsx"
+            self.file = "Commodities.xlsx"
             self.writer = pd.ExcelWriter(self.file)
             self.num_hist = 8
         else:

@@ -1,0 +1,118 @@
+<b>Financials</b>
+  <p>
+      <a href="">Home</a> | 
+      <a href="financials">Financials</a> |
+      <a href="commodities">Commodities</a> |
+      <a href="scanner">Scanner</a> |
+  </p>
+
+  <html>
+    <body>
+        <form method = "post" action = "/financials">
+          <p><input type = "submit" name = "submit_button" value = "Australian Dollar" />
+          <input type = "submit" name = "submit_button" value = "Bitcoin" />
+          <input type = "submit" name = "submit button" value = "Brazilian Real" />
+          <input type = "submit" value = "British Pound" />
+          <input type = "submit" value = "Canadian Dollar" />
+          <input type = "submit" value = "DJIA Consolidated" />
+          <input type = "submit" value = "Dow Jones" />
+          <input type = "submit" value = "E-Mini S&P" />
+          <input type = "submit" value = "E-Mini S&P Energy" />
+          <input type = "submit" value = "E-Mini S&P Financial" />
+          <input type = "submit" value = "E-Mini S&P Health Care" />
+          <input type = "submit" value = "E-Mini S&P Utilities" />
+          <input type = "submit" value = "Ethereum" />
+          <input type = "submit" value = "Euro FX" />
+          <input type = "submit" value = "Euro FX British Pound" />
+          <input type = "submit" value = "Eurodollars" />
+          <input type = "submit" value = "Fed Funds" />
+          <input type = "submit" value = "Japanese Yen" />
+          <input type = "submit" value = "Mexican Peso" />
+          <input type = "submit" value = "Micro Bitcoin" />
+          <input type = "submit" value = "Micro E-Mini Nasdaq" />
+          <input type = "submit" value = "Micro Ether" />
+          <input type = "submit" value = "Nasdaq Mini" />
+          <input type = "submit" value = "Nasdaq Consolidated" />
+          <input type = "submit" value = "Nikkei Stock" />
+          <input type = "submit" value = "NZ Dollar" />
+          <input type = "submit" value = "Russell E-Mini" />
+          <input type = "submit" value = "S&P Consolidated" />
+          <input type = "submit" value = "SO African Rand" />
+          <input type = "submit" value = "Swiss Franc" />
+          <input type = "submit" value = "Ultra UST 10Y" />
+          <input type = "submit" value = "Ultra UST Bond" />
+          <input type = "submit" value = "USD Index" />
+          <input type = "submit" value = "UST 10Y" />
+          <input type = "submit" value = "UST 2Y" />
+          <input type = "submit" value = "UST 5Y" />
+          <input type = "submit" value = "UST Bond" />
+          <input type = "submit" value = "VIX" /></p>
+        </form>   
+    </body>
+  </html>
+  
+      <html>
+      <header>
+          <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+      </header>
+      <body>
+      <table border="1" class="dataframe" id="table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Market_and_Exchange_Names</th>
+      <th>Report_Date_as_MM_DD_YYYY</th>
+      <th>CFTC_Contract_Market_Code</th>
+      <th>Open_Interest_All</th>
+      <th>Dealer_Positions_Long_All</th>
+      <th>Dealer_Positions_Short_All</th>
+      <th>Asset_Mgr_Positions_Long_All</th>
+      <th>Asset_Mgr_Positions_Short_All</th>
+      <th>Asset_Mgr_Positions_Spread_All</th>
+      <th>Lev_Money_Positions_Long_All</th>
+      <th>Lev_Money_Positions_Short_All</th>
+      <th>Lev_Money_Positions_Spread_All</th>
+      <th>Other_Rept_Positions_Long_All</th>
+      <th>Other_Rept_Positions_Short_All</th>
+      <th>Other_Rept_Positions_Spread_All</th>
+      <th>Tot_Rept_Positions_Long_All</th>
+      <th>Tot_Rept_Positions_Short_All</th>
+      <th>NonRept_Positions_Long_All</th>
+      <th>NonRept_Positions_Short_All</th>
+      <th>Dealer_Net</th>
+      <th>Dealer_Max</th>
+      <th>Dealer_Min</th>
+      <th>Dealer_Index</th>
+      <th>Asset_Mgr_Net</th>
+      <th>Asset_Mgr_Max</th>
+      <th>Asset_Mgr_Min</th>
+      <th>Asset_Mgr_Index</th>
+      <th>Lev_Money_Net</th>
+      <th>Lev_Money_Max</th>
+      <th>Lev_Money_Min</th>
+      <th>Lev_Money_Index</th>
+      <th>Other_Net</th>
+      <th>Other_Max</th>
+      <th>Other_Min</th>
+      <th>Other_Index</th>
+      <th>Price</th>
+      <th>Price_Min</th>
+      <th>Price_Max</th>
+      <th>Price_Index</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+      <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+      <script>
+          $(document).ready( function () {
+              $('#table').DataTable({
+                  "lengthMenu": [ [15, 50, 100, -1], [15, 50, 100, "All"] ],
+              });
+          });
+      </script>
+      </body>
+      </html>
+      
