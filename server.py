@@ -63,7 +63,7 @@ def financials():
   """
   for index, i in enumerate(names):
     df = pd.read_excel(xls, i)
-    table_html = df.to_html(table_id="table")
+    table_html = df.to_html(table_id="table", index=False)
     html[index] = table_html
     file = "templates/" + i + ".html"
     f = open(file,"w")
