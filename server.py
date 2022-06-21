@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import pandas as pd
 app = Flask(__name__)  
+import numpy as np
 
 def financials():
   look_at = pd.read_excel("Look_At/Financials_Look_At.xlsx")
