@@ -7,7 +7,6 @@ from urllib.request import Request, urlopen
 import urllib.request
 from wsgiref import headers
 from xmlrpc.client import Boolean
-import requests
 import pandas as pd
 from datetime import datetime
 import openpyxl
