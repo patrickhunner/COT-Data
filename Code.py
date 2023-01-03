@@ -12,6 +12,7 @@ from zipfile import ZipFile
 from io import BytesIO
 from openpyxl import load_workbook
 import datetime as dt
+import xlsxwriter
 
 class COT_Data():
     def __init__(self, read):
@@ -174,7 +175,6 @@ class COT_Data():
         for files in self.csv_names:
             df = pd.read_excel(files, engine = "openpyxl")
             df = df.drop(df.index[0])
-
 
 analysis = COT_Data("Financials_Look_At.xlsx")
 analysis.add_historical()
