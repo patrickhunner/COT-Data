@@ -1,3 +1,5 @@
+# FUNCTIONING VERSION
+
 import pandas as pd
 
 class COT_Data():

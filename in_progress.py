@@ -1,3 +1,5 @@
+# POTENTIAL WAYS TO IMPROVE, DOES NOT RUN! LOOK AT CODE.PY FOR CURRENT VERSION!
+
 from urllib.request import Request, urlopen
 import pandas as pd
 from io import BytesIO
