@@ -4,7 +4,7 @@
 
 This is a way to extract data on Commodities and Financial futures from the Commitment of Traders Report released weekly by the CFTC. It accesses local XLSX files and populates them with historical data as well as an index calculated to provide a relative metric to look at big money buying with. There is flexibility in changing which futures items you're getting information on though calculating different datapoints would be a bit more work.
 
-## How To Run By Cloning:
+## How To Run:
 
 ### Cloning
 
