@@ -2,23 +2,31 @@ import pandas as pd
 from sodapy import Socrata
 from openpyxl import load_workbook
 
+# lists to notify user of significant markets
 overbought = []
 oversold = []
 
+# dataframes of all data to be gotten from API
 commodity_look = pd.read_excel("Commodities_Look_At.xlsx")
 financial_look = pd.read_excel("Financials_Look_At.xlsx")
 
+# lists of all codes to be used in API calls
 commodity_codes = commodity_look["Number"].to_list()
 financial_codes = financial_look["Number"].to_list()
 
+# lists of all columns to be used in final dataframes
 commodity_columns = commodity_look["Headers"].to_list()
 financial_columns = financial_look["Headers"].to_list()
 
+# writers to necessary xlsx files
 commodity_writer = pd.ExcelWriter("Commodities.xlsx", engine='openpyxl')
 financial_writer = pd.ExcelWriter("Financials.xlsx", engine='openpyxl')
 
+# client to access API through
 client = Socrata("publicreporting.cftc.gov", None)
 
+# function to compile all historical data for each commodity
+# parameter: code - the code of the commodity to be compiled
 def compile_commodity(code):
     params = {
         "cftc_contract_market_code": code
@@ -34,6 +42,8 @@ def compile_commodity(code):
         print(label)
         df.to_excel(commodity_writer, sheet_name=label, index=False)
     
+# function to compile all historical data for each financial
+# parameter: code - the code of the financial to be compiled
 def compile_financial(code):
     params = {
         "cftc_contract_market_code": code
@@ -49,6 +59,9 @@ def compile_financial(code):
         print(label)
         df.to_excel(financial_writer, sheet_name=label.replace("/","-"), index=False)
 
+# function to analyze the data of a commodity
+# parameter: df - the dataframe of the commodity to be analyzed
+# return: df - the dataframe of the commodity after analysis
 def commodity_min_max_analysis(df):
     df["Comm_Net"] = df["prod_merc_positions_long"].astype(int) - df["prod_merc_positions_short"].astype(int)
     df["Comm_Max"] = df["Comm_Net"].max()
@@ -72,6 +85,9 @@ def commodity_min_max_analysis(df):
         oversold.append(df.at[0, "market_and_exchange_names"])
     return df
 
+# function to analyze the data of a financial
+# parameter: df - the dataframe of the financial to be analyzed
+# return: df - the dataframe of the financial after analysis
 def financial_min_max_analysis(df):
     df["dealer_net"] = df["dealer_positions_long_all"].astype(int) - df["dealer_positions_short_all"].astype(int)
     df["dealer_max"] = df["dealer_net"].max()
