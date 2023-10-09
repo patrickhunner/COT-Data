@@ -8,7 +8,7 @@ This is a way to extract data on Commodities and Financial futures from the Comm
 
 ### Cloning
 
-This is an overview of how to run the program by cloning the repository and running locally:
+This is an overview of how to run the program by cloning the repository and running locally (If you don't have a version of Python installed, go here https://www.python.org/downloads/):
 
   ```bash
   # Go to the project directory
@@ -19,18 +19,12 @@ This is an overview of how to run the program by cloning the repository and runn
   
   # Move to app directory
   cd app
+
+  # Install necessary dependencies
+  pip install -r requirements.txt
   
   # Run the program
   python analyzer.py
-  ```
-  
-The above code will only work if you have python installed as well as the necessary dependencies. To install Python, go here. https://www.python.org/downloads/. 
-
-Once you've done that, use pip to install the necessary dependencies as shown below:
-
-  ```bash
-  # Install dependencies
-  pip install openpyxl pandas sodapy
   ```
   
 ### Docker
